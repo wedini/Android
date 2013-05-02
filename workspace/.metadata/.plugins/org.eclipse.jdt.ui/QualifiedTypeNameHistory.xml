@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.example.calculator.R.id"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.view.View.OnCreateContextMenuListener"/>
+<fullyQualifiedTypeName name="android.preference.PreferenceManager.OnActivityDestroyListener"/>
+<fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="com.example.currencyconverter.R.id"/>
+<fullyQualifiedTypeName name="android.widget.Spinner"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.widget.AdapterView.OnItemSelectedListener"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.R.string"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+</qualifiedTypeNameHistroy>

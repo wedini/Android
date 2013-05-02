@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/TaskeditText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:ems="10"
+        android:hint="Task" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/DeseditText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:ems="10"
+        android:hint="Description" />
+
+    <EditText
+        android:id="@+id/DateeditText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:hint="    /   /    "
+        android:ems="10" />
+
+    <ImageButton
+        android:id="@+id/pickerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AddtoTaskList" />
+
+</LinearLayout>

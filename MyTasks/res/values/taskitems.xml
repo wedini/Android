@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="task_items">
+        <item>Pick up the milk</item>
+        <item>Return Library Books</item>
+        <item>Order Stationery</item>
+        <item>Take out the trash</item>
+        <item>Buy gift for Bob</item>
+        <item>Submit TPS report</item>
+        <item>Take over the world</item>
+    </string-array>
+</resources>

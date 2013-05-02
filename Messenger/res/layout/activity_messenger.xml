@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+ 
+    <TextView
+        android:id="@+id/sendSMS"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sendSMS" />
+    
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Recipient Number"
+        android:inputType="phone" />
+    
+    <Button
+        android:id="@+id/addMoreRecipient"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/addMoreRecipient" />
+    
+    <EditText
+        android:id="@+id/messageBody"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:gravity="top"
+        android:hint="@string/messageBody" />
+    
+    <Button
+        android:id="@+id/send"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send" />
+    
+</LinearLayout>

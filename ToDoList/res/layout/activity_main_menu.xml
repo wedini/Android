@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/myTasksButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addNewTaskButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/addNewTaskButton"
+        android:layout_marginTop="65dp"
+        android:padding="20dip"
+        android:text="@string/my_tasks"
+        android:onClick="showTasks" />
+
+    <Button
+        android:id="@+id/addNewTaskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myTasksButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:padding="20dip"
+        android:text="@string/add_new_task"
+        android:onClick="addNewTask" />
+
+    <Button
+        android:id="@+id/completedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/myTasksButton"
+        android:layout_alignRight="@+id/addNewTaskButton"
+        android:layout_below="@+id/addNewTaskButton"
+        android:layout_marginTop="32dp"
+        android:padding="20dip"
+        android:text="@string/completed"
+        android:onClick="showCompleted" />
+
+</RelativeLayout>

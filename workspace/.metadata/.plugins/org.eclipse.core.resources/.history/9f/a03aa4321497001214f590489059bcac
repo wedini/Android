@@ -1,0 +1,174 @@
+package com.example.currencyconverter;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+public class MainActivity extends Activity  {
+	EditText amount = null;
+	Button clear, swap, convert;    	
+	Spinner from, to;
+	double rate1 = 1, rate2 = 1;
+	String country1="USD",country2="USD";
+	ArrayAdapter<CharSequence> adapter1, adapter2, adapterT;
+	private int index1 = 0, index2=0;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+    	
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        amount = (EditText)findViewById(R.id.editText2);
+        clear = (Button)findViewById(R.id.button1);
+    	swap = (Button)findViewById(R.id.button2);
+    	convert = (Button)findViewById(R.id.button3);    	
+    	from = (Spinner)findViewById(R.id.spinner1);    	
+    	to = (Spinner)findViewById(R.id.spinner2);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+         adapter1 = ArrayAdapter.createFromResource(this,
+             R.array.country_currency, android.R.layout.simple_spinner_item);        
+         adapter2 = ArrayAdapter.createFromResource(this,
+             R.array.country_currency, android.R.layout.simple_spinner_item);
+         
+        // Specify the layout to use when the list of choices appears
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // Apply the adapter to the spinner
+        to.setAdapter(adapter2); 
+        from.setAdapter(adapter1);
+        valueSetter();      
+        //clear button
+    	clear.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+            	EditText output = (EditText) findViewById(R.id.editText1);
+		        output.setText(" ");
+		        output = (EditText) findViewById(R.id.editText2);
+		        output.setText(" ");
+            }
+        });
+    	
+    	//swap button
+    	swap.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+            	from.setSelection(index2);            	  
+            	to.setSelection(index1); 
+            	valueSetter();
+
+            	double result = converter();
+				EditText output = (EditText) findViewById(R.id.editText1);
+		        output.setText(Double.toString(result));
+//		        convert.performClick();
+            }
+        });
+    	    	
+    	//convert button
+    	convert.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+            	double result = converter();
+				EditText output = (EditText) findViewById(R.id.editText1);
+		        output.setText(Double.toString(result));
+            }
+        });	  
+    }
+	private void valueSetter() {
+		// From listener
+     	from.setOnItemSelectedListener(new OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> arg0, View arg1,
+					int arg2, long arg3) {
+			index1=arg2;
+			country1 = arg0.getItemAtPosition(arg2).toString();
+			Log.e("item selected", country1);
+			if (country1.equals("EUR")){
+	 			   rate1 = 0.69881;
+	         }else if(country1 .equals("GBP")){
+	         	rate1 = 0.61095;
+	         }else if(country1 .equals("AUD")){
+	         	rate1 = 0.93188;
+	         }else if(country1 .equals("CAD")){
+	         	rate1 = 0.96680;
+	         }else if(country1 .equals("INR")){
+	         	rate1 = 44.72;
+	         }else if(country1 .equals("BDT")){
+	         	rate1 = 73.14;
+	         }else if(country1 .equals("JPY")){
+	        	rate1 = 80.55;
+	         }else{
+	         	 rate1 = 1;
+	         }
+			System.out.println("Onitemselected rate ="+rate1);
+			//Log.e("item selected", arg0.getItemAtPositibron(arg2).toString());
+			}	
+			
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub	
+				System.out.println("Onitemselected rate ="+rate1);
+			}	
+			
+		});
+     	// To listener
+	   to.setOnItemSelectedListener(new OnItemSelectedListener() {
+			@Override 
+			public void onItemSelected(AdapterView<?> arg0, View arg1,
+					int arg2, long arg3) {
+			index2=arg2;
+			country2 = arg0.getItemAtPosition(arg2).toString();
+	 			 if (country2 .equals("EUR")){
+	 				rate2 = 0.69881;
+	 	         }else if(country2 .equals("GBP")){
+	 	         	rate2 = 0.61095;
+	 	         }else if(country2 .equals("AUD")){
+	 	         	rate2 = 0.93188;
+	 	         }else if(country2 .equals("CAD")){
+	 	         	rate2 = 0.96680;
+	 	         }else if(country2 .equals("INR")){
+	 	         	rate2 = 44.72;
+	 	         }else if(country2 .equals("BDT")){
+	 	         	rate2 = 73.14;
+	 	         }else if(country2 .equals("JPY")){
+	 	         	 rate2 = 80.55;
+	 	         }else{
+	 	         	 rate2 = 1; 
+	 	         }
+			//Log.e("item selected", arg0.getItemAtPositibron(arg2).toString());
+			}			
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub				
+			}			
+		});
+		
+	}
+	//converter is called by convert and swap buttons 
+	protected double converter() {
+    	valueSetter();
+
+		//amount is read from input and converted to string
+	   String amountStr = amount.getText().toString();
+	   Log.e("amountStr", amountStr);
+	   double amountDbl = Double.parseDouble(amountStr);
+	   //from USD	   
+	   if(country1 == "USD" && country2 != "USD"){
+		   System.out.println("test");
+		   return  (amountDbl* rate2);
+	   // to USD
+	   }else if(country1 != "USD" && country2 == "USD"){
+		   return (amountDbl/rate1);
+	   // no US countries	   
+	   }else{
+		   return (amountDbl/rate1)* rate2;
+	   }	 		
+	}
+}

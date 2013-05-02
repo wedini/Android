@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="app_name">Organizer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_organizer">OrganizerActivity</string>
+    <string name="myTasks">My Tasks</string>
+    <string name="completed">Completed</string>
+    
+    
+    
+    <string-array name="tasks">
+        <item>Pick up the milk</item>
+        <item>Return library books</item>
+        <item>Order stationery</item>
+        <item>Take out the trash</item>
+        <item>Buy gift for Bob</item>
+        <item>Submit TPS report</item>
+        <item>Take over the world</item>
+    </string-array>
+    
+
+</resources>

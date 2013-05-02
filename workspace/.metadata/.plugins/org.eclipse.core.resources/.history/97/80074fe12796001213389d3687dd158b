@@ -1,0 +1,52 @@
+package com.example.activitylifecycledemo;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toast.makeText(getApplicationContext(), "Mainscreen: onCreate", Toast.LENGTH_LONG).show();
+    }
+   
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    public void onStart(Bundle savedInstanceState) {
+    	super.onStart();
+        Toast.makeText(getApplicationContext(), "Mainscreen: onStrat", Toast.LENGTH_LONG).show();
+
+    }
+    public void onResume(Bundle savedInstanceState) {
+    	super.onResume();
+        Toast.makeText(getApplicationContext(), "Mainscreen: onResume", Toast.LENGTH_LONG).show();
+
+    }
+    public void onPause(Bundle savedInstanceState) {
+    	super.onPause();
+        Toast.makeText(getApplicationContext(), "Mainscreen: onPause", Toast.LENGTH_LONG).show();
+
+    }
+    protected void onStop(Bundle savedInstanceState) {
+        super.onStop();
+        Toast.makeText(getApplicationContext(), "Mainscreen: onStop", Toast.LENGTH_LONG).show();
+    }
+    protected void onDestroy(Bundle savedInstanceState) {
+        super.onDestroy();
+        Toast.makeText(getApplicationContext(), "Mainscreen: onDestroy", Toast.LENGTH_LONG).show();
+    }
+    protected void onRestrat(Bundle savedInstanceState) {
+        super.onRestrat();
+        Toast.makeText(getApplicationContext(), "Mainscreen: onRestrat", Toast.LENGTH_LONG).show();
+    }
+    
+}

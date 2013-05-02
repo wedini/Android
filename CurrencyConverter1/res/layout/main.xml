@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/from" />
+    
+    <Spinner
+        android:id="@+id/fromSpinner"
+ 		android:layout_width="match_parent"
+ 		android:layout_height="wrap_content"
+ 		android:entries="@array/currency_type_from"
+ 		android:prompt="@string/from" />
+    
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/amount" />
+    
+    <EditText
+        android:id="@+id/currency_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" />
+    
+    <TextView
+        android:id="@+id/to"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/to" />
+        
+    
+    <Spinner
+        android:id="@+id/toSpinner"
+ 		android:layout_width="match_parent"
+ 		android:layout_height="wrap_content"
+ 		android:entries="@array/currency_type_to" />
+    
+    <LinearLayout 
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <Button
+            android:id="@+id/clear_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clearBtn" />
+
+        <Button
+            android:id="@+id/swap_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/swapBtn" />
+
+        <Button
+            android:id="@+id/convert_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/convertBtn" />
+        
+        </LinearLayout>
+        
+    <TextView 
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/result"/>
+    
+    <TextView
+        android:id="@+id/result_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" />
+    
+    
+    
+    
+    
+    
+</LinearLayout>
